@@ -5,10 +5,6 @@ name: default
 clone:
   skip_verify: true
 
-trigger:
-  branch:
-    - main
-
 steps:
   - name: "build"
     image: debian

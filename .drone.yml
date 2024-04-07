@@ -1,0 +1,21 @@
+kind: pipeline
+type: docker
+name: default
+
+clone:
+  skip_verify: true
+
+trigger:
+  branch:
+    - main
+
+steps:
+  - name: "build"
+    image: debian
+    commands:
+      - apt update -y
+      - apt install -y tree
+      - tree --dirsfirst
+      - . scripts/init_env.sh
+      - . $REPO_PATH/scripts/init_base_layouts.sh
+      - . $REPO_PATH/scripts/init_sources_tar.sh

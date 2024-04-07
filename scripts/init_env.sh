@@ -5,7 +5,6 @@ echo "Step 1: Prepare all required environment variables and base directories fo
 export REPO_PATH=$PWD
 mkdir /mnt/lfs
 cd /mnt/lfs
-set +h
 umask 022
 LFS=/mnt/lfs
 LC_ALL=POSIX

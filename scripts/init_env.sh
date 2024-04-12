@@ -15,6 +15,8 @@ PATH=$LFS/tools/bin:/usr/sbin:$PATH
 CONFIG_SITE=$LFS/usr/share/config.site
 export LFS LC_ALL LFS_TGT PATH CONFIG_SITE
 
+export MAKEFLAGS=-j8
+
 echo "Step 1 - Output: Print environment variable information"
 
 export

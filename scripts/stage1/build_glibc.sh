@@ -31,4 +31,4 @@ cd $LFS
 
 echo "Step 7-Output: Output the version number of the ldd command"
 
-$LFS/usr/bin/ldd -v
+$LFS/usr/bin/ldd --version

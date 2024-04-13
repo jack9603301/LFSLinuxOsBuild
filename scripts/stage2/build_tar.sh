@@ -1,0 +1,13 @@
+echo "Step 20: Compile Tar 1.35(From Stage2)"
+
+cd $LFS/sources
+tar xvf "./tar-1.35.tar.xz"
+cd tar-1.35
+./configure --prefix=/usr   \
+            --host=$LFS_TGT \
+            --build=$(build-aux/config.guess)
+make
+make DESTDIR=$LFS install
+cd ..
+rm -rfv tar-1.35
+cd $LFS

@@ -1,6 +1,8 @@
-echo "Step 5: Compile LibStdC++ on GCC-13.2.0(From Stage1)"
+echo "Step 6: Compile LibStdC++ on GCC-13.2.0(From Stage1)"
 
 cd $LFS/sources
+tar xvf "./gcc-13.2.0.tar.xz"
+cd gcc-13.2.0
 mkdir -v build
 cd       build
 ../libstdc++-v3/configure           \
@@ -18,6 +20,6 @@ cd ../..
 rm -rfv gcc-13.2.0
 cd $LFS
 
-echo "Step 5-Output: Output gcc version number"
+echo "Step 6-Output: Output gcc version number"
 
 $LFS/tools/bin/$LFS_TGT-gcc -v

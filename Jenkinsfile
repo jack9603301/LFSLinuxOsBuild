@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image "debian"
+            args "--privileged"
         }
     }
     environment {
@@ -45,6 +46,16 @@ pipeline {
                 . $REPO_PATH/scripts/stage2/build_tar.sh || exit 1
                 . $REPO_PATH/scripts/stage2/build_binutils.sh || exit 1
                 . $REPO_PATH/scripts/stage2/build_gcc.sh || exit 1
+                . $REPO_PATH/scripts/chroot/mount_virtfs.sh || exit 1
+                cp -ravf $REPO_PATH/scripts $LFS/ || exit 1
+                /usr/sbin/chroot "$LFS" /usr/bin/env -i   \
+                    HOME=/root                  \
+                    TERM="$TERM"                \
+                    PS1='(lfs chroot) \\u:\\w\$ ' \
+                    PATH=/usr/bin:/usr/sbin     \
+                    MAKEFLAGS="-j$(nproc)"      \
+                    TESTSUITEFLAGS="-j$(nproc)" \
+                    /bin/bash --login /scripts/chroot/exec_chroot.sh
                 '''
             }
         }

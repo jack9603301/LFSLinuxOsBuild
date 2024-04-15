@@ -44,6 +44,7 @@ pipeline {
                 . $REPO_PATH/scripts/stage2/build_patch.sh || exit 1
                 . $REPO_PATH/scripts/stage2/build_sed.sh || exit 1
                 . $REPO_PATH/scripts/stage2/build_tar.sh || exit 1
+                . $REPO_PATH/scripts/stage2/build_xz.sh || exit 1
                 . $REPO_PATH/scripts/stage2/build_binutils.sh || exit 1
                 . $REPO_PATH/scripts/stage2/build_gcc.sh || exit 1
                 . $REPO_PATH/scripts/chroot/mount_virtfs.sh || exit 1

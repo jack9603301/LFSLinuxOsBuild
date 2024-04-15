@@ -43,6 +43,7 @@ uuidd:x:80:
 wheel:x:97:
 users:x:999:
 nogroup:x:65534:
-EOF 
+EOF
 
 exec /usr/bin/bash --login /scripts/chroot/stage3/init.sh
+

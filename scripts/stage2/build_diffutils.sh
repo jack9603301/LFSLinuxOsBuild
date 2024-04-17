@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 11: Compile Diffutils 3.10(From Stage2)"
 
 cd $LFS/sources

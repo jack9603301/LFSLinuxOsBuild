@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 4: Compile Binutils-2.42(From Stage1)"
 
 cd $LFS/sources
@@ -15,7 +18,7 @@ cd       build
 
 make
 make install
-cd ../
+cd ../..
 rm -rfv binutils-2.42
 cd $LFS
 

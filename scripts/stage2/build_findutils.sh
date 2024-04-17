@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 13: Compile Findutils 4.9.0(From Stage2)"
 
 cd $LFS/sources

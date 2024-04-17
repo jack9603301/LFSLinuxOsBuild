@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 6: Compile Linux Headers(From Stage1)"
 
 cd $LFS/sources

@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 16: Compile Gzip 1.13(From Stage2)"
 
 cd $LFS/sources

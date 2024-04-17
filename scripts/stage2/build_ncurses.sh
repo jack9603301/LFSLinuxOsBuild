@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 8: Compile M4 1.4.19(From Stage2)"
 
 cd $LFS/sources

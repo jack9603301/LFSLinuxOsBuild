@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 17: Compile Make 4.4.1(From Stage2)"
 
 cd $LFS/sources

@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 20: Compile Tar 1.35(From Stage2)"
 
 cd $LFS/sources

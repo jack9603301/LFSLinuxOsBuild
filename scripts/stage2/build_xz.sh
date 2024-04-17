@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 21: Compile Xz 5.4.6(From Stage2)"
 
 cd $LFS/sources

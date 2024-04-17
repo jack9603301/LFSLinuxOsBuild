@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 14: Compile Gawk 5.3.0(From Stage2)"
 
 cd $LFS/sources

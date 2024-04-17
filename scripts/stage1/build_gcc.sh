@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 5: Compile GCC-13.2.0(From Stage1)"
 
 cd $LFS/sources

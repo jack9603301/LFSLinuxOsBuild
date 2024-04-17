@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 9: Compile Bash 5.2.21(From Stage2)"
 
 cd $LFS/sources

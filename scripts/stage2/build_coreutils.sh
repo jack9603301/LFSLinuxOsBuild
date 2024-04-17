@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 10: Compile Coreutils 9.4(From Stage2)"
 
 cd $LFS/sources

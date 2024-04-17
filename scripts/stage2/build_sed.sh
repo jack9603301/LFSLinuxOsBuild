@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 19: Compile Sed 4.9(From Stage2)"
 
 cd $LFS/sources

@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 7: Compile Glibc-2.39(From Stage1)"
 
 cd $LFS/sources
@@ -25,7 +28,7 @@ echo "rootsbindir=/usr/sbin" > configparms
 make
 make DESTDIR=$LFS install
 sed '/RTLDLIST=/s@/usr@@g' -i $LFS/usr/bin/ldd
-cd ../
+cd ../..
 rm -rfv glibc-2.39
 cd $LFS
 

@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 18: Compile Patch 2.7.6(From Stage2)"
 
 cd $LFS/sources

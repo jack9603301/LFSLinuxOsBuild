@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 12: Compile File 5.45(From Stage2)"
 
 cd $LFS/sources

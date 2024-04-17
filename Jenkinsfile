@@ -16,38 +16,23 @@ pipeline {
                 apt install -y tree
                 apt install -y xz-utils
                 apt install -y gcc g++ cmake make automake autoconf texinfo patch gawk bison python3
+                apt install -y gettext
+                rm -rf /bin/sh
+                ln -sv bash /bin/sh
                 tree --dirsfirst
                 '''
+            }
+        }
+        stage("Check Build System environment") {
+            steps {
+                sh "scripts/version_check.sh"
             }
         }
         stage("Build System") {
             steps {
                 sh '''
                 . scripts/init_env.sh || exit 1
-                . $REPO_PATH/scripts/init_base_layouts.sh || exit 1
-                . $REPO_PATH/scripts/init_sources_tar.sh || exit 1
-                . $REPO_PATH/scripts/stage1/build_binutils.sh || exit 1
-                . $REPO_PATH/scripts/stage1/build_gcc.sh || exit 1
-                . $REPO_PATH/scripts/stage1/build_linux_headers.sh || exit 1
-                . $REPO_PATH/scripts/stage1/build_glibc.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_m4.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_ncurses.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_bash.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_coreutils.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_diffutils.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_file.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_findutils.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_gawk.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_grep.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_gzip.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_make.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_patch.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_sed.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_tar.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_xz.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_binutils.sh || exit 1
-                . $REPO_PATH/scripts/stage2/build_gcc.sh || exit 1
-                . $REPO_PATH/scripts/chroot/mount_virtfs.sh || exit 1
+                bash $REPO_PATH/scripts/init.sh || exit 1
                 cp -ravf $REPO_PATH/scripts $LFS/ || exit 1
                 /usr/sbin/chroot "$LFS" /usr/bin/env -i   \
                     HOME=/root                  \
@@ -57,6 +42,19 @@ pipeline {
                     MAKEFLAGS="-j$(nproc)"      \
                     TESTSUITEFLAGS="-j$(nproc)" \
                     /bin/bash --login /scripts/chroot/exec_chroot.sh
+                '''
+            }
+        }
+        stage("Full Clean") {
+            steps {
+                sh '''
+                . scripts/init_env.sh || exit 1
+                cd $LFS
+                mountpoint -q $LFS/dev/shm && umount $LFS/dev/shm
+                umount $LFS/dev/pts
+                umount $LFS/{sys,proc,run,dev}
+                cd
+                rm -rfv $LFS
                 '''
             }
         }

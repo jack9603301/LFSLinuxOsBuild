@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 15: Compile Grep 3.11(From Stage2)"
 
 cd $LFS/sources

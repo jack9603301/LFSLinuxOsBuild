@@ -1,3 +1,6 @@
+
+. ../pre_scripts.sh
+
 echo "Step 6: Compile LibStdC++ on GCC-13.2.0(From Stage1)"
 
 cd $LFS/sources

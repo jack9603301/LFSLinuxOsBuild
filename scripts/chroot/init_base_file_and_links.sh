@@ -45,5 +45,3 @@ users:x:999:
 nogroup:x:65534:
 EOF
 
-exec /usr/bin/bash --login /scripts/chroot/stage3/init.sh
-

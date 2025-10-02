@@ -5,7 +5,7 @@ echo "Step 22: Compile Binutils-2.45(From Stage2)"
 
 cd $LFS/sources
 tar xvf "./binutils-2.45.tar.xz"
-cd binutils-2.42
+cd binutils-2.45
 sed '6009s/$add_dir//' -i ltmain.sh
 mkdir -v build
 cd       build

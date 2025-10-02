@@ -1,13 +1,13 @@
 
 . ../pre_scripts.sh
 
-echo "Step 23: Compile GCC-13.2.0(From Stage2)"
+echo "Step 23: Compile GCC-15.2.0(From Stage2)"
 
 cd $LFS/sources
-tar xvf "./gcc-13.2.0.tar.xz"
-cd gcc-13.2.0
-tar -xf ../mpfr-4.2.1.tar.xz
-mv -v mpfr-4.2.1 mpfr
+tar xvf "./gcc-15.2.0.tar.xz"
+cd gcc-15.2.0
+tar -xf ../mpfr-4.2.2.tar.xz
+mv -v mpfr-4.2.2 mpfr
 tar -xf ../gmp-6.3.0.tar.xz
 mv -v gmp-6.3.0 gmp
 tar -xf ../mpc-1.3.1.tar.gz
@@ -45,7 +45,7 @@ make DESTDIR=$LFS install
 ln -sv gcc $LFS/usr/bin/cc
 cd ..
 cd ../
-rm -rfv gcc-13.2.0
+rm -rfv gcc-15.2.0
 cd $LFS
 
 echo "Step 23-Output: Output gcc version number"

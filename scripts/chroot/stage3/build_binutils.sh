@@ -1,8 +1,8 @@
-echo "Step 48: Compile Binutils 2.42(From Stage3 in chroot)"
+echo "Step 50: Compile Binutils 2.45(From Stage3 in chroot)"
 
 cd $LFS/sources
-tar xvf "./binutils-2.42.tar.xz"
-cd binutils-2.42
+tar xvf "./binutils-2.45.tar.xz"
+cd binutils-2.45
 mkdir -v build
 cd       build
 ../configure --prefix=/usr       \
@@ -19,5 +19,5 @@ make tooldir=/usr
 make tooldir=/usr install
 rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a
 cd ../..
-rm -rfv binutils-2.42
+rm -rfv binutils-2.45
 cd ..

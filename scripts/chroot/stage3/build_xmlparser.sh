@@ -1,4 +1,4 @@
-echo "Step 72: Compile XML::Parser 2.47(From Stage3 in chroot)"
+echo "Step 74: Compile XML::Parser 2.47(From Stage3 in chroot)"
 
 cd /sources
 tar xvf "./XML-Parser-2.47.tar.gz"

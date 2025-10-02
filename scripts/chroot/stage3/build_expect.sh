@@ -1,4 +1,4 @@
-echo "Step 45: Compile Expect 5.45.4(From Stage3 in chroot)"
+echo "Step 47: Compile Expect 5.45.4(From Stage3 in chroot)"
 
 cd /sources
 tar xvf "./expect5.45.4.tar.gz"

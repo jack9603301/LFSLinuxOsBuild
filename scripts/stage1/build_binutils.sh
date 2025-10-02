@@ -1,11 +1,11 @@
 
 . ../pre_scripts.sh
 
-echo "Step 4: Compile Binutils-2.42(From Stage1)"
+echo "Step 4: Compile Binutils-2.45(From Stage1)"
 
 cd $LFS/sources
-tar xvf "./binutils-2.42.tar.xz"
-cd binutils-2.42
+tar xvf "./binutils-2.45.tar.xz"
+cd binutils-2.45
 mkdir -v build
 cd       build
 ../configure --prefix=$LFS/tools \
@@ -19,7 +19,7 @@ cd       build
 make
 make install
 cd ../..
-rm -rfv binutils-2.42
+rm -rfv binutils-2.45
 cd $LFS
 
 echo "Step 4-Output: Output tools tool directory file"

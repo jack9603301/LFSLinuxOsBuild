@@ -1,8 +1,8 @@
-echo "Step 76: Compile OpenSSL 3.2.1(From Stage3 in chroot)"
+echo "Step 78: Compile OpenSSL 3.5.2(From Stage3 in chroot)"
 
 cd /sources
-tar xvf "./openssl-3.2.1.tar.gz"
-cd openssl-3.2.1
+tar xvf "./openssl-3.5.2.tar.gz"
+cd openssl-3.5.2
 ./config --prefix=/usr         \
          --openssldir=/etc/ssl \
          --libdir=lib          \
@@ -15,8 +15,8 @@ cd openssl-3.2.1
 make
 sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
 make MANSUFFIX=ssl install
-mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.2.1
-cp -vfr doc/* /usr/share/doc/openssl-3.2.1
+mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.5.2
+cp -vfr doc/* /usr/share/doc/openssl-3.5.2
 cd ../
-rm -rfv openssl-3.2.1
+rm -rfv openssl-3.5.2
 cd /

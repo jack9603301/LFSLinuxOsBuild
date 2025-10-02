@@ -1,13 +1,13 @@
-echo "Step 28: Compile Python 3.12.2(From Stage3 in chroot)"
+echo "Step 29: Compile Python 3.13.7(From Stage3 in chroot)"
 
 cd /sources
-tar xvf "./Python-3.12.2.tar.xz"
-cd Python-3.12.2
+tar xvf "./Python-3.13.7.tar.xz"
+cd Python-3.13.7
 ./configure --prefix=/usr   \
             --enable-shared \
             --without-ensurepip
 make
 make install
 cd ../
-rm -rfv Python-3.12.2
+rm -rfv Python-3.13.7
 cd /

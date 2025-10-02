@@ -1,4 +1,4 @@
-echo "Step 36: Compile Bzip2 1.0.8(From Stage3 in chroot)"
+echo "Step 37: Compile Bzip2 1.0.8(From Stage3 in chroot)"
 
 cd /sources
 tar xvf "./bzip2-1.0.8.tar.gz"

@@ -1,4 +1,4 @@
-echo "Step 52: Compile Attr 2.5.2(From Stage3 in chroot)"
+echo "Step 54: Compile Attr 2.5.2(From Stage3 in chroot)"
 
 cd $LFS/sources
 tar xvf "./attr-2.5.2.tar.gz"

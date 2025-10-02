@@ -1,8 +1,8 @@
-echo "Step 77: Compile Kmod 31(From Stage3 in chroot)"
+echo "Step 88: Compile Kmod 34.2(From Stage3 in chroot)"
 
 cd /sources
-tar xvf "./kmod-31.tar.xz"
-cd kmod-31
+tar xvf "./kmod-34.2.tar.xz"
+cd kmod-34.2
 ./configure --prefix=/usr          \
             --sysconfdir=/etc      \
             --with-openssl         \
@@ -18,5 +18,5 @@ done
 
 ln -sfv kmod /usr/bin/lsmod
 cd ../
-rm -rfv kmod-31
+rm -rfv kmod-34.2
 cd /

@@ -1,8 +1,8 @@
-echo "Step 77: Compile Libelf 0.190(From Stage3 in chroot)"
+echo "Step 79: Compile Libelf 0.193(From Stage3 in chroot)"
 
 cd /sources
-tar xvf "./elfutils-0.190.tar.bz2"
-cd elfutils-0.190
+tar xvf "./elfutils-0.193.tar.bz2"
+cd elfutils-0.193
 ./configure --prefix=/usr                \
             --disable-debuginfod         \
             --enable-libdebuginfod=dummy
@@ -11,5 +11,5 @@ make -C libelf install
 install -vm644 config/libelf.pc /usr/lib/pkgconfig
 rm /usr/lib/libelf.a
 cd ../
-rm -rfv elfutils-0.190
+rm -rfv elfutils-0.193
 cd /

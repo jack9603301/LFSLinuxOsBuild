@@ -1,9 +1,9 @@
-echo "Step 34: Compile Glibc 2.39(From Stage3 in chroot)"
+echo "Step 35: Compile Glibc 2.42(From Stage3 in chroot)"
 
 cd /sources
-tar xvf "./glibc-2.39.tar.xz"
-cd glibc-2.39
-patch -Np1 -i ../glibc-2.39-fhs-1.patch
+tar xvf "./glibc-2.42.tar.xz"
+cd glibc-2.42
+patch -Np1 -i ../glibc-2.42-fhs-1.patch
 mkdir -v build
 cd       build
 echo "rootsbindir=/usr/sbin" > configparms
@@ -109,7 +109,7 @@ EOF
 mkdir -pv /etc/ld.so.conf.d
 
 cd ../
-rm -rfv glibc-2.39
+rm -rfv glibc-2.42
 cd /
 
 echo "Step 34-Output: Output the version number of the ldd command"

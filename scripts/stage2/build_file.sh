@@ -1,11 +1,11 @@
 
 . ../pre_scripts.sh
 
-echo "Step 12: Compile File 5.45(From Stage2)"
+echo "Step 12: Compile File 5.46(From Stage2)"
 
 cd $LFS/sources
-tar xvf "./file-5.45.tar.gz"
-cd file-5.45
+tar xvf "./file-5.46.tar.gz"
+cd file-5.46
 mkdir build
 pushd build
   ../configure --disable-bzlib      \
@@ -19,5 +19,5 @@ make FILE_COMPILE=$(pwd)/build/src/file
 make DESTDIR=$LFS install
 rm -v $LFS/usr/lib/libmagic.la
 cd ..
-rm -rfv file-5.45
+rm -rfv file-5.46
 cd $LFS

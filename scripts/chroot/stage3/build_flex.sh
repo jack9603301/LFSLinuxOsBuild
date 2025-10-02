@@ -1,4 +1,4 @@
-echo "Step 43: Compile Flex 2.6.4(From Stage3 in chroot)"
+echo "Step 45: Compile Flex 2.6.4(From Stage3 in chroot)"
 
 cd /sources
 tar xvf "./flex-2.6.4.tar.gz"

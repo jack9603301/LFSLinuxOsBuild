@@ -1,8 +1,8 @@
-echo "Step 56: Compile Shadow 4.14.5(From Stage3 in chroot)"
+echo "Step 58: Compile Shadow 4.18.0(From Stage3 in chroot)"
 
 cd $LFS/sources
-tar xvf "./shadow-4.14.5.tar.xz"
-cd shadow-4.14.5
+tar xvf "./shadow-4.18.0.tar.xz"
+cd shadow-4.18.0
 sed -i 's/groups$(EXEEXT) //' src/Makefile.in
 find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \;
 find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {} \;
@@ -26,5 +26,5 @@ mkdir -p /etc/default
 useradd -D --gid 999
 sed -i '/MAIL/s/yes/no/' /etc/default/useradd
 cd ../
-rm -rfv shadow-4.14.5
+rm -rfv shadow-4.18.0
 cd ..

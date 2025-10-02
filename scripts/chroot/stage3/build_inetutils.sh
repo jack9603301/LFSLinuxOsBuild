@@ -1,8 +1,8 @@
-echo "Step 69: Compile Inetutils 2.5(From Stage3 in chroot)"
+echo "Step 71: Compile Inetutils 2.6(From Stage3 in chroot)"
 
 cd /sources
-tar xvf "./inetutils-2.5.tar.xz"
-cd inetutils-2.5
+tar xvf "./inetutils-2.6.tar.xz"
+cd inetutils-2.6
 ./configure --prefix=/usr        \
             --bindir=/usr/bin    \
             --localstatedir=/var \
@@ -17,5 +17,5 @@ make
 make install
 mv -v /usr/{,s}bin/ifconfig
 cd ../
-rm -rfv inetutils-2.5
+rm -rfv inetutils-2.6
 cd /

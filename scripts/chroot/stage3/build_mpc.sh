@@ -1,4 +1,4 @@
-echo "Step 51: Compile MPC 1.3.1(From Stage3 in chroot)"
+echo "Step 53: Compile MPC 1.3.1(From Stage3 in chroot)"
 
 cd $LFS/sources
 tar xvf "./mpc-1.3.1.tar.gz"

@@ -1,11 +1,11 @@
 
 . ../pre_scripts.sh
 
-echo "Step 9: Compile Bash 5.2.21(From Stage2)"
+echo "Step 9: Compile Bash 5.3(From Stage2)"
 
 cd $LFS/sources
-tar xvf "./bash-5.2.21.tar.gz"
-cd bash-5.2.21
+tar xvf "./bash-5.3.tar.gz"
+cd bash-5.3
 ./configure --prefix=/usr                      \
             --build=$(sh support/config.guess) \
             --host=$LFS_TGT                    \
@@ -14,5 +14,5 @@ make
 make DESTDIR=$LFS install
 ln -sv bash $LFS/bin/sh
 cd ..
-rm -rfv bash-5.2.21
+rm -rfv bash-5.3
 cd $LFS

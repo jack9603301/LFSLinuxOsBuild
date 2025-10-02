@@ -1,4 +1,4 @@
-echo "Step 73: Compile Intltool 0.51.0(From Stage3 in chroot)"
+echo "Step 75: Compile Intltool 0.51.0(From Stage3 in chroot)"
 
 cd /sources
 tar xvf "./intltool-0.51.0.tar.gz"

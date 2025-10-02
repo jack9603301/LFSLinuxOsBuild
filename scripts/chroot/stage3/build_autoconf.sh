@@ -1,4 +1,4 @@
-echo "Step 74: Compile Autoconf 2.72(From Stage3 in chroot)"
+echo "Step 76: Compile Autoconf 2.72(From Stage3 in chroot)"
 
 cd /sources
 tar xvf "./autoconf-2.72.tar.xz"

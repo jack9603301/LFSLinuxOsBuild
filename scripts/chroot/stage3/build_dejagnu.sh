@@ -1,4 +1,4 @@
-echo "Step 46: Compile DejaGNU 1.6.3(From Stage3 in chroot)"
+echo "Step 48: Compile DejaGNU 1.6.3(From Stage3 in chroot)"
 
 cd /sources
 tar xvf "./dejagnu-1.6.3.tar.gz"

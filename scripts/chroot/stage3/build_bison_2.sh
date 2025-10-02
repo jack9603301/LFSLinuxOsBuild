@@ -1,4 +1,4 @@
-echo "Step 62: Compile Bison 3.8.2(From Stage3 in chroot)"
+echo "Step 64: Compile Bison 3.8.2(From Stage3 in chroot)"
 
 cd /sources
 tar xvf "./bison-3.8.2.tar.xz"

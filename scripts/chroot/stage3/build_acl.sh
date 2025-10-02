@@ -1,4 +1,4 @@
-echo "Step 53: Compile Acl 2.3.2(From Stage3 in chroot)"
+echo "Step 55: Compile Acl 2.3.2(From Stage3 in chroot)"
 
 cd $LFS/sources
 tar xvf "./acl-2.3.2.tar.xz"

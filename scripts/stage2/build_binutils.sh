@@ -1,10 +1,10 @@
 
 . ../pre_scripts.sh
 
-echo "Step 22: Compile Binutils-2.42(From Stage2)"
+echo "Step 22: Compile Binutils-2.45(From Stage2)"
 
 cd $LFS/sources
-tar xvf "./binutils-2.42.tar.xz"
+tar xvf "./binutils-2.45.tar.xz"
 cd binutils-2.42
 sed '6009s/$add_dir//' -i ltmain.sh
 mkdir -v build
@@ -23,5 +23,5 @@ make
 make DESTDIR=$LFS install
 rm -v $LFS/usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes,sframe}.{a,la}
 cd ../..
-rm -rfv binutils-2.42
+rm -rfv binutils-2.45
 cd $LFS

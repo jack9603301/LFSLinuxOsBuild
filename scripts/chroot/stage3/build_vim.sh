@@ -1,0 +1,35 @@
+echo "Step 102: Compile Vim 9.1.1629(From Stage3 in chroot)"
+
+cd /sources
+tar xvf "./vim-9.1.1629.tar.gz"
+cd vim-9.1.1629
+echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
+./configure --prefix=/usr
+make
+ln -sv vim /usr/bin/vi
+for L in  /usr/share/man/{,*/}man1/vim.1; do
+    ln -sv vim.1 $(dirname $L)/vi.1
+done
+
+echo "Step 102-Configure: Configure Vim"
+cat > /etc/vimrc << "EOF"
+" Begin /etc/vimrc
+
+" Ensure defaults are set before customizing settings, not after
+source $VIMRUNTIME/defaults.vim
+let skip_defaults_vim=1
+
+set nocompatible
+set backspace=2
+set mouse=
+syntax on
+if (&term == "xterm") || (&term == "putty")
+  set background=dark
+endif
+
+" End /etc/vimrc
+EOF
+
+cd ../
+rm -rfv vim-9.1.1629
+cd /

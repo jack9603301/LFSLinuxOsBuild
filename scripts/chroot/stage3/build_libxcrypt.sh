@@ -1,8 +1,8 @@
-echo "Step 55: Compile Libxcrypt 4.4.36(From Stage3 in chroot)"
+echo "Step 57: Compile Libxcrypt 4.4.38(From Stage3 in chroot)"
 
 cd $LFS/sources
-tar xvf "./libxcrypt-4.4.36.tar.xz"
-cd libxcrypt-4.4.36
+tar xvf "./libxcrypt-4.4.38.tar.xz"
+cd libxcrypt-4.4.38
 ./configure --prefix=/usr                \
             --enable-hashes=strong,glibc \
             --enable-obsolete-api=no     \
@@ -11,5 +11,5 @@ cd libxcrypt-4.4.36
 make
 make install
 cd ../
-rm -rfv libxcrypt-4.4.36
+rm -rfv libxcrypt-4.4.38
 cd ..

@@ -1,4 +1,4 @@
-echo "Step 49: Compile GMP 6.3.0(From Stage3 in chroot)"
+echo "Step 51: Compile GMP 6.3.0(From Stage3 in chroot)"
 
 cd $LFS/sources
 tar xvf "./gmp-6.3.0.tar.xz"

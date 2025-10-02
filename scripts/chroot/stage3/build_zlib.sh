@@ -1,4 +1,4 @@
-echo "Step 35: Compile Zlib 1.3.1(From Stage3 in chroot)"
+echo "Step 36: Compile Zlib 1.3.1(From Stage3 in chroot)"
 
 cd /sources
 tar xvf "./zlib-1.3.1.tar.gz"

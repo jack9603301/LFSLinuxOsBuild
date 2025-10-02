@@ -1,10 +1,10 @@
 
 . ../pre_scripts.sh
 
-echo "Step 7: Compile M4 1.4.19(From Stage2)"
+echo "Step 7: Compile M4 1.4.20(From Stage2)"
 
 cd $LFS/sources
-tar xvf "./m4-1.4.19.tar.xz"
+tar xvf "./m4-1.4.20.tar.xz"
 cd m4-1.4.19
 ./configure --prefix=/usr   \
             --host=$LFS_TGT \
@@ -12,5 +12,5 @@ cd m4-1.4.19
 make
 make DESTDIR=$LFS install
 cd ..
-rm -rfv m4-1.4.19
+rm -rfv m4-1.4.20
 cd $LFS

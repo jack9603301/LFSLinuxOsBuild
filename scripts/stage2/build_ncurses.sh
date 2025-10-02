@@ -1,10 +1,10 @@
 
 . ../pre_scripts.sh
 
-echo "Step 8: Compile M4 1.4.19(From Stage2)"
+echo "Step 8: Compile Ncurses 6.5-20250809(From Stage2)"
 
 cd $LFS/sources
-tar xvf "./ncurses-6.4-20230520.tar.xz"
+tar xvf "./ncurses-6.5-20250809.tar.xz"
 cd ncurses-6.4-20230520
 sed -i s/mawk// configure
 mkdir build
@@ -31,5 +31,5 @@ ln -sv libncursesw.so $LFS/usr/lib/libncurses.so
 sed -e 's/^#if.*XOPEN.*$/#if 1/' \
     -i $LFS/usr/include/curses.h
 cd ..
-rm -rfv ncurses-6.4-20230520
+rm -rfv ncurses-6.5-20250809
 cd $LFS

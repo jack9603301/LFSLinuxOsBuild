@@ -1,8 +1,8 @@
-echo "Step 44: Compile Tcl 8.6.13(From Stage3 in chroot)"
+echo "Step 46: Compile Tcl 8.6.16(From Stage3 in chroot)"
 
 cd /sources
-tar xvf "./tcl8.6.13-src.tar.gz"
-cd tcl8.6.13
+tar xvf "./tcl8.6.16-src.tar.gz"
+cd tcl8.6.16
 SRCDIR=$(pwd)
 cd unix
 ./configure --prefix=/usr           \
@@ -31,9 +31,9 @@ make install-private-headers
 ln -sfv tclsh8.6 /usr/bin/tclsh
 mv /usr/share/man/man3/{Thread,Tcl_Thread}.3
 cd ..
-tar -xf ../tcl8.6.13-html.tar.gz --strip-components=1
-mkdir -v -p /usr/share/doc/tcl-8.6.13
-cp -v -r  ./html/* /usr/share/doc/tcl-8.6.13
+tar -xf ../tcl8.6.16-html.tar.gz --strip-components=1
+mkdir -v -p /usr/share/doc/tcl-8.6.16
+cp -v -r  ./html/* /usr/share/doc/tcl-8.6.16
 cd ../
-rm -rfv tcl8.6.13
+rm -rfv tcl8.6.16
 cd /

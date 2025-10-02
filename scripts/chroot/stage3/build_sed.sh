@@ -1,4 +1,4 @@
-echo "Step 59: Compile Sed 4.9(From Stage3 in chroot)"
+echo "Step 61: Compile Sed 4.9(From Stage3 in chroot)"
 
 cd $LFS/sources
 tar xvf "./sed-4.9.tar.xz"

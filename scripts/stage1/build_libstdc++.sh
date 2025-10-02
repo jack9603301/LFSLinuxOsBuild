@@ -1,11 +1,11 @@
 
 . ../pre_scripts.sh
 
-echo "Step 6: Compile LibStdC++ on GCC-13.2.0(From Stage1)"
+echo "Step 6: Compile LibStdC++ on GCC-15.2.0(From Stage1)"
 
 cd $LFS/sources
-tar xvf "./gcc-13.2.0.tar.xz"
-cd gcc-13.2.0
+tar xvf "./gcc-15.2.0.tar.xz"
+cd gcc-15.2.0
 mkdir -v build
 cd       build
 ../libstdc++-v3/configure           \
@@ -15,12 +15,12 @@ cd       build
     --disable-multilib              \
     --disable-nls                   \
     --disable-libstdcxx-pch         \
-    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/13.2.0
+    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/15.2.0
 make
 make DESTDIR=$LFS install
 rm -v $LFS/usr/lib/lib{stdc++{,exp,fs},supc++}.la
 cd ../..
-rm -rfv gcc-13.2.0
+rm -rfv gcc-15.2.0
 cd $LFS
 
 echo "Step 6-Output: Output gcc version number"

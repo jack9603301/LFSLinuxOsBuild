@@ -1,8 +1,8 @@
-echo "Step 58: Compile Ncurses 6.4-20230520(From Stage3 in chroot)"
+echo "Step 60: Compile Ncurses 6.5-20250809(From Stage3 in chroot)"
 
 cd $LFS/sources
-tar xvf "./ncurses-6.4-20230520.tar.xz"
-cd ncurses-6.4-20230520
+tar xvf "./ncurses-6.5-20250809.tar.xz"
+cd ncurses-6.5-20250809
 ./configure --prefix=/usr           \
             --mandir=/usr/share/man \
             --with-shared           \
@@ -24,7 +24,7 @@ for lib in ncurses form panel menu ; do
     ln -sfv ${lib}w.pc    /usr/lib/pkgconfig/${lib}.pc
 done
 ln -sfv libncursesw.so /usr/lib/libcurses.so
-cp -v -R doc -T /usr/share/doc/ncurses-6.4-20230520
+cp -v -R doc -T /usr/share/doc/ncurses-6.5-20250809
 make distclean
 ./configure --prefix=/usr    \
             --with-shared    \
@@ -35,5 +35,5 @@ make distclean
 make sources libs
 cp -av lib/lib*.so.5* /usr/lib
 cd ../
-rm -rfv ncurses-6.4-20230520
+rm -rfv ncurses-6.5-20250809
 cd ..

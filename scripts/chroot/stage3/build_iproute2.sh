@@ -1,0 +1,13 @@
+echo "Step 95: Compile IPRoute2 6.16.0(From Stage3 in chroot)"
+
+cd /sources
+tar xvf "./iproute2-6.16.0.tar.xz"
+cd iproute2-6.16.0
+sed -i /ARPD/d Makefile
+rm -fv man/man8/arpd.8
+make NETNS_RUN_DIR=/run/netns
+make SBINDIR=/usr/sbin install
+install -vDm644 COPYING README* -t /usr/share/doc/iproute2-6.16.0
+cd ../
+rm -rfv iproute2-6.16.0
+cd /

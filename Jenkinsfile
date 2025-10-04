@@ -28,6 +28,14 @@ pipeline {
                 sh "scripts/version_check.sh"
             }
         }
+        stage("Check Base LFS System Packaging") {
+            steps {
+                sh '''
+                cd sources/lfs/
+                md5sum -c md5sums
+                '''
+            }
+        }
         stage("Build System") {
             steps {
                 sh '''

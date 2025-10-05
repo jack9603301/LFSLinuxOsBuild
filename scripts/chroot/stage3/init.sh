@@ -45,7 +45,7 @@ chmod -v 600  /var/log/btmp
 . /scripts/chroot/stage3/build_ncurses.sh || exit 1
 . /scripts/chroot/stage3/build_sed.sh || exit 1
 . /scripts/chroot/stage3/build_psmisc.sh || exit 1
-. /scripts/chroot/stage3/build_gettexti_2.sh || exit 1
+. /scripts/chroot/stage3/build_gettext_2.sh || exit 1
 . /scripts/chroot/stage3/build_bison_2.sh || exit 1
 . /scripts/chroot/stage3/build_grep.sh || exit 1
 . /scripts/chroot/stage3/build_bash.sh || exit 1

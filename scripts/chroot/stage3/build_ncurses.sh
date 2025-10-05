@@ -1,7 +1,7 @@
 echo "Step 60: Compile Ncurses 6.5-20250809(From Stage3 in chroot)"
 
 cd $LFS/sources
-tar xvf "./ncurses-6.5-20250809.tar.xz"
+tar xvf "./ncurses-6.5-20250809.tgz"
 cd ncurses-6.5-20250809
 ./configure --prefix=/usr           \
             --mandir=/usr/share/man \

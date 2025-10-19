@@ -4,6 +4,7 @@ echo "Step 3: Copy all required files"
 
 mkdir -v $LFS/sources
 cp -ravf $REPO_PATH/sources/lfs/* $LFS/sources
+cp -ravf $REPO_PATH/sources/blfs/* $LFS/sources
 
 echo "Step 3-Output: Print all files in the sources directory"
 

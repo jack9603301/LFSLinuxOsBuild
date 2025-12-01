@@ -3,10 +3,10 @@
 echo "Step 1: Prepare all required environment variables and base directories for the build"
 
 export REPO_PATH=$PWD
-mkdir /mnt/lfs
-cd /mnt/lfs
+mkdir -p target/lfs
+cd target/lfs
 umask 022
-LFS=/mnt/lfs
+LFS=$REPO_PATH/target/lfs
 LC_ALL=POSIX
 LFS_TGT=$(uname -m)-lfs-linux-gnu
 PATH=/usr/bin

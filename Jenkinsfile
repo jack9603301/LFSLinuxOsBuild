@@ -1,28 +1,13 @@
 pipeline {
     agent {
-        docker {
-            image "debian"
-            args "--privileged"
+        node {
+            label "jenkins-runner-debian-1"
         }
     }
     environment {
         CI = true
     }
     stages {
-        stage("Initialize LFS operating system to build compilation environment") {
-            steps {
-                sh '''
-                apt update -y
-                apt install -y tree
-                apt install -y xz-utils
-                apt install -y gcc g++ cmake make automake autoconf texinfo patch gawk bison python3
-                apt install -y gettext
-                rm -rf /bin/sh
-                ln -sv bash /bin/sh
-                tree --dirsfirst
-                '''
-            }
-        }
         stage("Check Build System environment") {
             steps {
                 sh "scripts/version_check.sh"
